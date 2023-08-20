@@ -1,5 +1,5 @@
 const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
-import transformDrink from "../../utils/transformDrink";
+import transformDrink from "../utils/transformDrink";
 import fetchData from "./fetchData";
 
 export async function getRandomCoctail() {
