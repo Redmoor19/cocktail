@@ -1,5 +1,11 @@
+import CategoriesSearch from "../features/browse/CategoriesSearch";
+
 function Browse() {
-  return <div>Browse</div>;
+  return (
+    <div>
+      <CategoriesSearch />
+    </div>
+  );
 }
 
 export default Browse;

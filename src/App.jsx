@@ -7,7 +7,11 @@ import Categories from "./pages/Categories";
 import Browse from "./pages/Browse";
 import Cart from "./pages/Cart";
 import PageNotFound from "./pages/PageNotFound";
+import Drink from "./pages/Drink";
+import Ingridient from "./pages/Ingridient";
+
 import AppLayout from "./UI/AppLayout";
+
 const queryClient = new QueryClient();
 
 function App() {
@@ -21,6 +25,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/browse" element={<Browse />} />
+            <Route path="/browse/drink/:id" element={<Drink />} />
+            <Route path="/browse/ingridient/:id" element={<Ingridient />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>

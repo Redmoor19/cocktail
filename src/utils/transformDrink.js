@@ -1,8 +1,9 @@
 export default function transformDrink(drink) {
   return {
+    type: "drink",
     idDrink: drink.idDrink,
     category: drink.strCategory,
-    drinkName: drink.strDrink,
+    title: drink.strDrink,
     thumb: drink.strDrinkThumb,
     glass: drink.strGlass,
     instruction: drink.strInstructions,

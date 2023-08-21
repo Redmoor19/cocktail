@@ -27,7 +27,11 @@ export async function searchCocktailByIngredient(name) {
 
 export async function searchByCategory(category) {
   const data = await fetchData(`${BASE_URL}filter.php?c=${category}`);
-  return data.drinks;
+  return data.drinks.map((drink) => ({
+    idDrink: drink.idDrink,
+    title: drink.strDrink,
+    thumb: drink.strDrinkThumb,
+  }));
 }
 
 export async function getIngredientById(id) {
