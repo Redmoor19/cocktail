@@ -2,7 +2,7 @@ const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
 import transformDrink from "../utils/transformDrink";
 import fetchData from "./fetchData";
 
-export async function getRandomCoctail() {
+export async function getRandomCocktail() {
   const data = await fetchData(`${BASE_URL}random.php`);
   const modifiedData = transformDrink(data.drinks[0]);
   return modifiedData;
