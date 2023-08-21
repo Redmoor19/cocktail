@@ -1,5 +1,11 @@
+import CategoriesWrapper from "../features/categories/CategoriesWrapper";
+
 function Categories() {
-  return <div>Categories</div>;
+  return (
+    <div>
+      <CategoriesWrapper />
+    </div>
+  );
 }
 
 export default Categories;
