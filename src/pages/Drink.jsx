@@ -1,5 +1,11 @@
+import DrinkWrapper from "../features/drink/DrinkWrapper";
+
 function Drink() {
-  return <div>Drink</div>;
+  return (
+    <div>
+      <DrinkWrapper />
+    </div>
+  );
 }
 
 export default Drink;

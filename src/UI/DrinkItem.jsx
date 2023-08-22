@@ -1,6 +1,6 @@
 import { useNavigate, createSearchParams } from "react-router-dom";
 
-function DrinkItem({ thumb, title, type }) {
+function DrinkItem({ thumb, title, type, idDrink }) {
   const navigate = useNavigate();
 
   function clickHandler() {
@@ -11,6 +11,8 @@ function DrinkItem({ thumb, title, type }) {
           category: title,
         }).toString(),
       });
+    } else {
+      navigate(`/browse/drink/${idDrink}`);
     }
   }
 

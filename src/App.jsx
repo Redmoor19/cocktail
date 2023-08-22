@@ -11,28 +11,31 @@ import Drink from "./pages/Drink";
 import Ingridient from "./pages/Ingridient";
 
 import AppLayout from "./UI/AppLayout";
+import { CartContextProvider } from "./context/cartContext";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route path="/" index element={<Navigate to="/home" replace />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/browse" element={<Browse />} />
-            <Route path="/browse/drink/:id" element={<Drink />} />
-            <Route path="/browse/ingridient/:id" element={<Ingridient />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </QueryClientProvider>
+    <CartContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route path="/" index element={<Navigate to="/home" replace />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/browse" element={<Browse />} />
+              <Route path="/browse/drink/:id" element={<Drink />} />
+              <Route path="/browse/ingridient/:id" element={<Ingridient />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </CartContextProvider>
   );
 }
 
