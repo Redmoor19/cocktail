@@ -12,7 +12,7 @@ function CartBar() {
   if (cart.length > 0)
     return (
       <footer className="bg-stone-900 py-4">
-        <div className="md:w-[600px] lg:w-[800px] 2xl:w-[1200px] mx-auto flex justify-between items-center">
+        <div className="w-full px-3 md:px-0 md:w-[600px] lg:w-[800px] 2xl:w-[1200px] mx-auto flex justify-between items-center">
           <div>
             <h4 className="text-stone-300">
               You have {cart.length} different drink{cart.length > 1 ? "s" : ""}{" "}

@@ -23,7 +23,7 @@ function IngredientWrapper() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="bg-stone-300 py-9 px-10 rounded-2xl flex relative">
+    <div className="bg-stone-300 py-9 px-3 md:px-10 rounded-2xl flex relative mx-4 md:mx-0">
       <div className="flex-1 flex flex-col items-center gap-2">
         <img
           src={`http://www.thecocktaildb.com/images/ingredients/${ingredient}.png`}

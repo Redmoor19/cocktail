@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav className="flex gap-8 text-stone-400">
+    <nav className="md:flex gap-8 text-stone-400 hidden">
       <NavLink
         to="/home"
         className={({ isActive }) =>
