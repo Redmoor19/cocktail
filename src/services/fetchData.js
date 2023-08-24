@@ -1,6 +1,6 @@
-async function fetchData(url, headers) {
+async function fetchData(url, method = "GET", headers) {
   try {
-    const response = await fetch(url, { headers });
+    const response = await fetch(url, { method, headers });
     if (!response.ok) {
       throw new Error("Can't get the data");
     }

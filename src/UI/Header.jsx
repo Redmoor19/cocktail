@@ -1,4 +1,5 @@
 import NavBar from "./NavBar";
+import SearchInput from "./SearchInput";
 
 function Header() {
   return (
@@ -13,11 +14,7 @@ function Header() {
           </h1>
           <NavBar />
         </div>
-        <input
-          className="bg-stone-700 h-10 w-64 xl:w-80 rounded-3xl pl-4 placeholder:text-stone-200 text-stone-200 hover:ring-2 hover:ring-stone-900 active:ring-2 active:ring-stone-900"
-          type="text"
-          placeholder="Let's roll..."
-        />
+        <SearchInput />
       </div>
       <div className="flex-1"></div>
     </div>

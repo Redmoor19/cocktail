@@ -8,7 +8,7 @@ import Browse from "./pages/Browse";
 import Cart from "./pages/Cart";
 import PageNotFound from "./pages/PageNotFound";
 import Drink from "./pages/Drink";
-import Ingridient from "./pages/Ingridient";
+import Ingredient from "./pages/Ingredient";
 
 import AppLayout from "./UI/AppLayout";
 import { CartContextProvider } from "./context/cartContext";
@@ -28,7 +28,7 @@ function App() {
               <Route path="/categories" element={<Categories />} />
               <Route path="/browse" element={<Browse />} />
               <Route path="/browse/drink/:id" element={<Drink />} />
-              <Route path="/browse/ingridient/:id" element={<Ingridient />} />
+              <Route path="/browse/ingredient" element={<Ingredient />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="*" element={<PageNotFound />} />
             </Route>

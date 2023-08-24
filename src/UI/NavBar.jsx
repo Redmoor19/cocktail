@@ -27,6 +27,14 @@ function NavBar() {
       >
         Browse
       </NavLink>
+      <NavLink
+        to="/cart"
+        className={({ isActive }) =>
+          `${isActive ? "text-stone-900" : ""} text-lg`
+        }
+      >
+        Cart
+      </NavLink>
     </nav>
   );
 }

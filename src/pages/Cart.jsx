@@ -1,5 +1,11 @@
+import CartWrapper from "../features/cart/CartWrapper";
+
 function Cart() {
-  return <div>Cart</div>;
+  return (
+    <div>
+      <CartWrapper />
+    </div>
+  );
 }
 
 export default Cart;
