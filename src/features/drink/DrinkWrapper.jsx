@@ -43,7 +43,7 @@ function DrinkWrapper() {
             : "No instruction for this drink"}
         </p>
       </div>
-      <div className="flex-1 md:flex-[2] grid grid-cols-3 md:grid-cols-4 px-5 gap-y-3 mt-8 md:mt-0">
+      <div className="flex-1 md:flex-[2] grid grid-cols-3 md:grid-cols-4 md:px-5 gap-y-3 mt-8 md:mt-0">
         {data.ingredients.map((item) => (
           <IngridientItem key={item.ingredient} {...item} />
         ))}
