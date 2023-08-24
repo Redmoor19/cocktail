@@ -19,7 +19,6 @@ function FactJoke() {
     ],
   });
 
-  console.log(joke, fact);
   if (jokeIsLoading || factIsLoading) return <Spinner />;
 
   return (
