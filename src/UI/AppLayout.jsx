@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Gradient from "./Gradient";
 import Header from "./Header";
+import CartBar from "../features/cart/CartBar";
 
 function AppLayout() {
   return (
@@ -12,6 +13,7 @@ function AppLayout() {
           <Outlet />
         </main>
       </Gradient>
+      <CartBar />
     </div>
   );
 }

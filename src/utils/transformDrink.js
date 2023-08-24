@@ -7,7 +7,7 @@ export default function transformDrink(drink) {
     thumb: drink.strDrinkThumb,
     glass: drink.strGlass,
     instruction: drink.strInstructions,
-    ingredient: transformIngedients(drink),
+    ingredients: transformIngedients(drink),
   };
 }
 
@@ -24,7 +24,7 @@ export function transformIngedients(drink) {
     const translatedMeasure = measure ? translateMeasure(measure) : measure;
 
     if (ingredient) {
-      ingredients.push({ ingredient, translatedMeasure });
+      ingredients.push({ ingredient, ...translatedMeasure });
     } else {
       break;
     }
@@ -35,33 +35,54 @@ export function transformIngedients(drink) {
 
 function translateMeasure(measureStr) {
   let measureArr = measureStr.trim().split(" ");
-  let result;
 
   function arrToNum(arr) {
-    let result = 1;
+    let measure = 1,
+      unit = "",
+      containsNum = false;
     for (const item of arr) {
       if (!isNaN(item)) {
-        result *= parseFloat(item);
+        measure = measure * parseFloat(item);
+        containsNum = true;
       } else if (item.includes("/")) {
         const [num, denum] = item.split("/");
-        result = (result * parseFloat(num)) / parseFloat(denum);
+        measure = (measure * parseFloat(num)) / parseFloat(denum);
+        containsNum = true;
+      } else if (item.includes("-")) {
+        const [first, second] = item.split("-");
+        measure = measure * (parseFloat(second) - parseFloat(first));
+        containsNum = true;
+      } else {
+        unit += ` ${item}`;
       }
     }
-    return result;
+    if (!containsNum) measure = null;
+    return [measure, unit];
   }
-  const measure = arrToNum(measureArr);
+
+  const [measure, unit] = arrToNum(measureArr);
+  let amount, measureUnit;
 
   if (measureArr.find((item) => item === "oz")) {
-    result = measure * 30 + " ml";
+    amount = measure * 30;
+    measureUnit = "ml";
   } else if (measureArr.find((item) => (item === "qt") | (item === "quart"))) {
-    result = measure * 950 + " ml";
+    amount = measure * 950;
+    measureUnit = "ml";
   } else if (measureArr.find((item) => item === "pint")) {
-    result = measure * 550 + " ml";
+    amount = measure * 550;
+    measureUnit = "ml";
   } else if (measureArr.find((item) => item === "gal")) {
-    result = measure * 4.5 + " L";
+    amount = measure * 4.5;
+    measureUnit = "L";
   } else {
-    result = measureStr.trim();
+    amount = measure;
+    measureUnit = unit;
   }
 
-  return result;
+  if (amount && amount % 1 !== 0) {
+    amount = amount.toFixed(1);
+  }
+
+  return { amount, unit: measureUnit };
 }

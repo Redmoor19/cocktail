@@ -1,4 +1,4 @@
-const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
+export const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
 import transformDrink from "../utils/transformDrink";
 import fetchData from "./fetchData";
 
@@ -22,7 +22,11 @@ export async function getCocktailById(id) {
 
 export async function searchCocktailByIngredient(name) {
   const data = await fetchData(`${BASE_URL}filter.php?i=${name}`);
-  return data.drinks;
+  return data.drinks.map((drink) => ({
+    idDrink: drink.idDrink,
+    title: drink.strDrink,
+    thumb: drink.strDrinkThumb,
+  }));
 }
 
 export async function searchByCategory(category) {
@@ -34,8 +38,8 @@ export async function searchByCategory(category) {
   }));
 }
 
-export async function getIngredientById(id) {
-  const data = await fetchData(`${BASE_URL}lookup.php?iid=${id}`);
+export async function getIngredientByName(name) {
+  const data = await fetchData(`${BASE_URL}search.php?i=${name}`);
   const ingredient = data.ingredients[0];
   const modifiedData = {
     idIngredient: ingredient.idIngredient,
