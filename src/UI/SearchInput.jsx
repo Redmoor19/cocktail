@@ -38,7 +38,7 @@ function SearchInput() {
 
   return (
     <input
-      className="bg-stone-700 h-10 w-64 xl:w-80 rounded-3xl pl-4 placeholder:text-stone-200 text-stone-200 hover:ring-2 hover:ring-stone-900 active:ring-2 active:ring-stone-900"
+      className="bg-stone-700 h-12 md:h-10 w-64 xl:w-80 rounded-3xl pl-4 placeholder:text-stone-200 text-stone-200 hover:ring-2 hover:ring-stone-900 active:ring-2 active:ring-stone-900"
       type="text"
       placeholder="Let's roll..."
       value={searchQuery}

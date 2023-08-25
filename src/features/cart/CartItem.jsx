@@ -43,9 +43,11 @@ function CartItem({ title, ingredients, amount, idDrink }) {
           <li className="ml-10 py-1" key={item.ingredient}>
             {item.ingredient}{" "}
             <span className="font-semibold text-stone-700">
-              {item.amount && item.amount % 1 !== 0
-                ? (item.amount * amount).toFixed(1)
-                : item.amount * amount}
+              {item.amount
+                ? item.amount % 1 !== 0
+                  ? (item.amount * amount).toFixed(1)
+                  : item.amount * amount
+                : null}
               {item.unit}
             </span>
           </li>
