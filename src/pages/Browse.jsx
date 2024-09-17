@@ -5,10 +5,11 @@ import {
   searchCocktailByIngredient,
   searchCocktailByName,
 } from "../services/cocktailApi";
+import Container from "../UI/Container";
 
 function Browse() {
   return (
-    <div>
+    <Container>
       <SearchBox identificator={"category"} fetchFunc={searchByCategory} />
       <SearchBox
         identificator={"ingredient"}
@@ -16,7 +17,7 @@ function Browse() {
       />
       <SearchBox identificator={"name"} fetchFunc={searchCocktailByName} />
       <NoSearch />
-    </div>
+    </Container>
   );
 }
 

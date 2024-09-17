@@ -1,11 +1,9 @@
-import FactJoke from "./FactJoke";
 import RandomCocktail from "./RandomCocktail";
 
 function HomeWrapper() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex justify-center items-center h-full">
       <RandomCocktail />
-      <FactJoke />
     </div>
   );
 }

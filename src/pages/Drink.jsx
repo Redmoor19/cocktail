@@ -1,10 +1,11 @@
 import DrinkWrapper from "../features/drink/DrinkWrapper";
+import Container from "../UI/Container";
 
 function Drink() {
   return (
-    <div>
+    <Container>
       <DrinkWrapper />
-    </div>
+    </Container>
   );
 }
 

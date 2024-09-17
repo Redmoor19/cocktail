@@ -1,10 +1,11 @@
 import CartWrapper from "../features/cart/CartWrapper";
+import Container from "../UI/Container";
 
 function Cart() {
   return (
-    <div>
+    <Container>
       <CartWrapper />
-    </div>
+    </Container>
   );
 }
 

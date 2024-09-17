@@ -11,7 +11,7 @@ function CartBar() {
 
   if (cart.length > 0)
     return (
-      <footer className="bg-stone-900 py-4">
+      <footer className="bg-stone-900 py-4 fixed bottom-0 w-full">
         <div className="w-full px-3 md:px-0 md:w-[600px] lg:w-[800px] 2xl:w-[1200px] mx-auto flex justify-between items-center">
           <div>
             <h4 className="text-stone-300">
